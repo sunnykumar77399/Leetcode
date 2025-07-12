@@ -16,12 +16,11 @@ public:
         if(root==NULL) return;
         res.push_back(root->val);
 
-        if(root->left!=NULL) solve(root->left);
-        if(root->right!=NULL) solve(root->right);
+        solve(root->left);
+        solve(root->right);
     }
     vector<int> preorderTraversal(TreeNode* root) {
-        solve(root);
-        // cout<<root->left;
+        solve(root); 
         return res;
     }
 };
