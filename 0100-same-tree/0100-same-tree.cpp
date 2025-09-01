@@ -12,13 +12,13 @@
 class Solution {
 public:
     bool check(TreeNode* p,TreeNode* q){
-        if(q==NULL && p==NULL) return true;
-        if((q==NULL && p!=NULL) || (q!=NULL && p==NULL)) return false;
-
+        if(q==NULL || p==NULL) return (q==p);
         if(p->val!=q->val) return false;
 
-        else if(!check(p->left,q->left)) return false;
-        else if(!check(p->right,q->right)) return false;
+        if(
+            !check(p->left,q->left) && 
+            !check(p->right,q->right)
+        ) return false;
         
         return true;
         
