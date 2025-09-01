@@ -15,10 +15,8 @@ public:
         if(q==NULL || p==NULL) return (q==p);
         if(p->val!=q->val) return false;
 
-        if(
-            !check(p->left,q->left) && 
-            !check(p->right,q->right)
-        ) return false;
+        if(!check(p->left,q->left) || !check(p->right,q->right)) return false;
+      
         
         return true;
         
