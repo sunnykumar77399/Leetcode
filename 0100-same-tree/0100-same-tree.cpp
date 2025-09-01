@@ -17,8 +17,8 @@ public:
 
         if(p->val!=q->val) return false;
 
-        if(!check(p->left,q->left)) return false;
-        if(!check(p->right,q->right)) return false;
+        else if(!check(p->left,q->left)) return false;
+        else if(!check(p->right,q->right)) return false;
         
         return true;
         
